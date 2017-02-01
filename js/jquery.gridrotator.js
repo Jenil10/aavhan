@@ -114,14 +114,14 @@
 	// the options
 	$.GridRotator.defaults = {
 		// number of rows
-		rows : 4,
+		rows : 3,
 		// number of columns 
-		columns : 10,
-		w1024 : { rows : 3, columns : 8 },
-		w768 : {rows : 3,columns : 7 },
-		w480 : {rows : 3,columns : 5 },
-		w320 : {rows : 2,columns : 4 },
-		w240 : {rows : 2,columns : 3 },
+		columns : 4,
+		w1024 : { rows : 2, columns : 5 },
+		w768 : {rows : 3,columns : 4 },
+		w480 : {rows : 4,columns : 3 },
+		w320 : {rows : 6,columns : 2 },
+		w240 : {rows : 12,columns : 1 },	
 		// step: number of items that are replaced at the same time
 		// random || [some number]
 		// note: for performance issues, the number "can't" be > options.maxStep
@@ -153,7 +153,7 @@
 		// if true the items will switch when hovered
 		onhover : false,
 		// ids of elements that shouldn't change
-		nochange : []
+		nochange : [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 	};
 
 	$.GridRotator.prototype = {
@@ -300,11 +300,22 @@
 
 					$item.css( {
 						width : j < Math.floor( gapWidth ) ? itemWidth + 1 : itemWidth,
-						height : itemWidth
+						height : itemWidth/13
+						// var c_w = this.$el.width();
+
+						// // we will choose the number of rows/columns according to the container's width and the values set in the plugin options 
+						// switch( true ) {
+						// 	case ( c_w < 240 ) : height : 20; break;
+						// 	case ( c_w < 320 ) : height : 20; break;
+						// 	case ( c_w < 480 ) : height : 20; break;
+						// 	case ( c_w < 768 ) : height : 120; break;
+						// 	case ( c_w < 1024 ) : height : 120; break;
+						// 	default : height : 120; break;
+						// }
 					} );
 
 					if( $.inArray( idx, this.options.nochange ) !== -1 ) {
-						$item.addClass( 'ri-nochange' ).data( 'nochange', true );
+						$item.addClass( 'ri-nochange' ).data( 'nochange', false );
 					}
 
 				}
