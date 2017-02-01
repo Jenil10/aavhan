@@ -421,9 +421,9 @@ header .fh5co-navbar-brand .fh5co-logo:active, header .fh5co-navbar-brand .fh5co
   z-index: 1003;
   position: relative;
   display: block;
-  margin: 0 auto;
+  margin-right: 75px;
   cursor: pointer;
-  margin-top: 0px;
+  margin-top: 35px;
 }
 @media screen and (max-width: 768px) {
   .fh5co-nav-toggle {

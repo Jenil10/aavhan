@@ -71,10 +71,11 @@
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
-	background-size: cover;
+	background-size: contain;
+	/*background-width: 100%;*/
 }
 .ri-grid ul li a img{
-
+	width: 100%
 }
 
 /* Grid wrapper sizes */
